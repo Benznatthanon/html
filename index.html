@@ -61,10 +61,6 @@
         var app = new Vue({
             el: '#app',
             data: {
-                // contacts: [
-                //     { name: 'Weera', phoneNumber: '081-8117784' },
-                //     { name: 'Nuttaluck', phoneNumber: '080-0937060' }
-                // ],
                 contacts: [],
                 newContactName: '',
                 newContactPhoneNumber: ''
@@ -72,20 +68,39 @@
             methods: {
                 addNewContact: function() {
                     let newContact = { name: this.newContactName, phoneNumber: this.newContactPhoneNumber }
-                    this.contacts.push(newContact)
+                    axios.post('http://localhost:3000/contacts', newContact)
+                        .then((res) => {
+                            this.getContactList()
+                        })
+                        .catch((err) => {
+                            console.log(err)
+                        })
+
+                    // this.contacts.push(newContact)
                     this.newContactName = ''
                     this.newContactPhoneNumber = ''
+                },
+                getContactList: function() {
+                    axios.get('http://localhost:3000/contacts')
+                    .then((res) => {
+                        this.contacts = res.data
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
                 }
             }
         })
 
-        axios.get('http://localhost:3000/contacts')
-            .then((res) => {
-                app.contacts = res.data
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+        app.getContactList()
+
+        // axios.get('http://localhost:3000/contacts')
+        //     .then((res) => {
+        //         app.contacts = res.data
+        //     })
+        //     .catch((err) => {
+        //         console.log(err)
+        //     })
     </script>
 </body>
 </html>
