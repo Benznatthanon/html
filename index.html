@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <h2>New Contact</h2>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -27,7 +27,7 @@
             <span>&nbsp;</span>
             <h2>List of Contacts</h2>
             <ul class="list-group">
-                <li class="list-group-item">Weera (081-811-7784)</li>
+                <li class="list-group-item" v-for="contact in contacts">{{ contact.name }} ({{ contact.phoneNumber }})</li>
             </ul>
         </div>
     </div>
@@ -35,5 +35,18 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/vue/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                contacts: [
+                    { name: 'Weera', phoneNumber: '081-8117784' },
+                    { name: 'Nuttaluck', phoneNumber: '080-0937060' }
+                ]
+            }
+        })
+    </script>
 </body>
 </html>
