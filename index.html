@@ -39,25 +39,6 @@
     <script src="node_modules/vue/dist/vue.js"></script>
 
     <script>
-        // import axios from 'axios'
-        // export default {
-        //     data() {
-        //         return {
-        //             contacts: [],
-        //             errors: []
-        //         }
-        //     },
-        //     created() {
-        //         axios.get('http://localhost:8080/contacts')
-        //             .then(response => {
-        //                 this.contacts = response.data
-        //             })
-        //             .catch(e => {
-        //                 this.errors.push(e)
-        //             })
-        //     }
-        // }
-
         var app = new Vue({
             el: '#app',
             data: {
@@ -76,7 +57,6 @@
                             console.log(err)
                         })
 
-                    // this.contacts.push(newContact)
                     this.newContactName = ''
                     this.newContactPhoneNumber = ''
                 },
@@ -93,14 +73,6 @@
         })
 
         app.getContactList()
-
-        // axios.get('http://localhost:3000/contacts')
-        //     .then((res) => {
-        //         app.contacts = res.data
-        //     })
-        //     .catch((err) => {
-        //         console.log(err)
-        //     })
     </script>
 </body>
 </html>
