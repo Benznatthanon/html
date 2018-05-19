@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact List</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>New Contact</h2>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="contact-name-label">Name</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Contact name" id="contact-name-text">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="contact-phone-label">Phone</span>
+            </div>
+            <input type="text" id="cotact-phone-text" class="form-control" aria-label="Contact phone number">
+        </div>
+        <button class="btn btn-primary">Save Contact</button>
+        <div>
+            <span>&nbsp;</span>
+            <h2>List of Contacts</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Weera (081-811-7784)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
