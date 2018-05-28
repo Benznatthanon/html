@@ -1,10 +1,10 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. Use `npm install` to install library\r 2. Use `npm start` to start web application server",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/http-server"
+    "start": "http-server"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,13 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
     "vue": "^2.5.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballweera/buu-web-programming-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ballweera/buu-web-programming-project/issues"
+  },
+  "homepage": "https://github.com/ballweera/buu-web-programming-project#readme"
 }
